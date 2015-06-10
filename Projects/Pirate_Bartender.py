@@ -16,7 +16,7 @@ ingredients = {
     "Fruity": ["slice of orange", "dash of cassis", "cherry on top"]
 }
 
-def Questions():
+def questions():
     preferences = {}
     for key, val in questions.items():
         response = raw_input(val)
@@ -26,7 +26,7 @@ def Questions():
             preferences[key] = "False"
     return preferences
     
-def createDrink(preferences):
+def create_drink(preferences):
     drink = []
     for preference, value in preferences.items():
         if value != "True":
@@ -36,8 +36,8 @@ def createDrink(preferences):
     return drink
               
 def main():
-    flavor = Questions()
-    served = createDrink(flavor)
+    flavor = questions()
+    served = create_drink(flavor)
     print "One drink coming right up!"
     print "Your drink's recipe includes: "
     for ingredient in served:

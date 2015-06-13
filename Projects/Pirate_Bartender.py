@@ -1,6 +1,6 @@
 import random
 
-questions = {
+all_questions = {
     "strong": "Do ye like yer drinks strong?",
     "salty": "Do ye like it with a salty tang?",
     "bitter": "Are ye a lubber who likes it bitter?",
@@ -13,27 +13,25 @@ ingredients = {
     "salty": ["olive on a stick", "salt-dusted rim", "rasher of bcaon"],
     "bitter": ["shake of bitters", "splash of tonic", "twist of lemon peel"],
     "sweet": ["sugar cube", "spoonful of honey", "spash of cola"],
-    "Fruity": ["slice of orange", "dash of cassis", "cherry on top"]
+    "fruity": ["slice of orange", "dash of cassis", "cherry on top"]
 }
 
 
 def questions():
     preferences = {}
-    for key, val in questions.items():
+    for key, val in all_questions.iteritems():
         response = raw_input(val)
-        if (response == 'y' or response =='yes'):
-            preferences[key] = "True"
+        if (response == 'y' or response == 'yes'):
+            preferences[key] = True
         else:
-            preferences[key] = "False"
+            preferences[key] = False
     return preferences
 
 
 def create_drink(preferences):
     drink = []
-    for preference, value in preferences.items():
-        if value != "True":
-            continue
-        else:
+    for preference, value in preferences.iteritems():
+        if value:
             drink.append(random.choice(ingredients[preference]))
     return drink
 
@@ -46,6 +44,5 @@ def main():
     for ingredient in served:
         print ingredient
 
-
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()

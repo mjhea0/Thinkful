@@ -42,3 +42,7 @@
 .social > li {
     display: inline-block;
 }
+
+.content-footer > p {
+ color: white;
+}

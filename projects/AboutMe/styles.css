@@ -1,5 +1,6 @@
 .masthead-heading,
-.masthead-intro {
+.masthead-intro
+.content-footer {
     text-align: center;
 }
 
@@ -19,6 +20,16 @@
     margin-top: -0.2em;
 }
 
+.introduction-section,
+.location-section,
+.questions-section {
+    max-width: 38em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2em;
+}
+
+.content-footer,
 .introduction-section,
 .location-section,
 .questions-section {

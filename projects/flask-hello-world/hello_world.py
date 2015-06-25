@@ -10,6 +10,10 @@ def say_hi():
 @app.route("/hello/<name>")
 def hi_person(name):
     return "Hello {}!".format(name.title())
+    
+@app.route("/hello/<name>")
+def hi_person(name):
+    return "Hello {}!".format(name.title())
 
 if __name__ == '__main__':
     app.run()

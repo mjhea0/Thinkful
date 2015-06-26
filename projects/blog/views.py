@@ -30,3 +30,7 @@ def posts(page=1, paginate_by=10):
         page=page,
         total_pages=total_pages
     )
+
+@app.route("/post/add", methods=["GET"])
+def add_post_get():
+    return render_template("add_post.html")

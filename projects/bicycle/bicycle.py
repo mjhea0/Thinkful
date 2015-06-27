@@ -11,12 +11,11 @@ class BikeShop(Bicycle):
         self.inventory = inventory
         self.profit = 0
 
-    def getShopName(self):
+    def get_shop_name(self):
         return self.shop_name
 
-    def getInventory(self):
-        for bikes in self.inventory:
-            return bikes
+    def get_inventory(self):
+        return self.inventory
 
 
 class Customer(object):
@@ -28,7 +27,7 @@ class Customer(object):
 
 if __name__ == '__main__':
 
-# bike models for inventory
+    # bike models for inventory
     hybrid = Bicycle("hybrid", 20, 400)
     bmx = Bicycle("bmx", 10, 80)
     road = Bicycle("road", 15, 560)
@@ -40,14 +39,18 @@ if __name__ == '__main__':
 
     shop = BikeShop("Freddys Bicycles", initial_inventory)
 
-# customers
+    # customers
     josh = Customer("Josh", 1000)
     john = Customer("John", 500)
     joan = Customer("Joan", 200)
 
     customersList = [josh, john, joan]
 
-    print "Welcome to {}!".format(shop.getShopName())
+    print "Welcome to {}!".format(shop.get_shop_name())
+    print "Current Inventory:"
+    print "Model - Weight - Cost"
+    for bike in shop.get_inventory():
+        print "{0} {1} ${2}".format(bike.model_name, bike.bike_weight, bike.bike_cost)
 
 #    for buyer in customerList:
 #      if bike price <=  buyer.budget:
